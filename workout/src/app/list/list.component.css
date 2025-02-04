@@ -1,0 +1,112 @@
+.body {
+    /* margin-left: 10px; */
+    width: 100%;
+}
+
+.main {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 130%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[type="text"],
+select {
+    padding: 8px;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pagination button,
+.pagination select {
+    padding: 6px 12px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #f4f4f4;
+    cursor: not-allowed;
+}
+
+.pagination .active {
+    border: 2px solid #007bff;
+    color: #007bff;
+}
+
+
+.container .search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #fff;
+    width: 45%;
+    /* margin-left: 10%; */
+    height: auto; /* Adjust height dynamically */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .container .search-input {
+    flex: 1; 
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    min-width: 0; 
+  }
+  
+  .container .search-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px; 
+  }
+  
+  .container .search-btn i {
+    color: #aaa;
+    font-size: 18px;
+  }
+  
+  .container .search-btn:hover i {
+    color: #555;
+  }
+  

@@ -1,0 +1,27 @@
+
+<div class="main">
+
+    <div class="main">
+        <div class="container-1">
+          <ul>
+            <li *ngFor="let user of userData"
+                (click)="updateChart(user)"
+                [class.active]="activeUser === user">
+              {{ user.name }}
+            </li>
+          </ul>
+        </div>
+      
+        <div class="container-2">
+          <canvas baseChart
+                  [type]="'bar'"
+                  [data]="userChartData"
+                  [options]="chartOptions">
+          </canvas>
+        </div>
+      </div>
+      
+
+
+
+</div>

@@ -1,0 +1,41 @@
+<div class="main">
+    <form class="form-group" [formGroup]="userdata" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <h1>User Registration</h1>
+
+
+
+
+            <div class="form-row">
+                <label for="user name">User Name<span style="color: rgb(142, 0, 0);">*</span></label>
+                <input type="text" placeholder="Enter your name" formControlName="name">
+            </div>
+
+            <div class="form-row">
+                <label for="workout">Workout Type<span style="color: rgb(142, 0, 0);">*</span></label>
+                <select id="workout" name="workout" formControlName="workout_type">
+                  <option value="" disabled selected>Select Workout Type</option>
+                  <option value="1">Cycling</option>
+                  <option value="2">Yoga</option>
+                  <option value="3">Running</option>
+                  <option value="4">Swimming</option>
+                  <option value="5">Strength Training</option>
+                  <option value="6">Gymnastic</option>
+                
+                </select>
+              </div>
+              
+
+            <div class="form-row">
+                <label for="minutes">Workout Minutes<span style="color: rgb(154, 2, 2);">*</span></label>
+                <input type="text" placeholder="Enter your workout minutes" formControlName="workout_minutes">
+            </div>
+
+            <div class="add-button">
+                <button class="btn" type="submit">Add Workout</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+

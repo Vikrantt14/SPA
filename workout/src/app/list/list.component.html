@@ -1,0 +1,58 @@
+<div class="body">
+  <div class="main">
+
+    <div class="container">
+
+      <div class="search-box">
+        <input type="text" class="search-input" placeholder="Search across all fields..." (input)="onSearch($event)"
+          [value]="searchTerm">
+        <button class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <select (change)="onFilterChange($event)">
+        <option value="">All</option>
+        <option *ngFor="let type of workoutTypes" [value]="type">{{ type }}</option>
+      </select>
+
+    </div>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Workouts</th>
+        <th>Number of Workouts</th>
+        <th>Total Workout Minutes</th>
+      </tr>
+
+      <tr *ngFor="let user of filteredList">
+        <td>{{ user.name }}</td>
+        <td>{{ getWorkoutTypes(user.workouts) }}</td>
+        <td>{{ getWorkoutCount(user.workouts) }}</td>
+        <td>{{ getTotalWorkoutMinutes(user.workouts) }}</td>
+      </tr>
+    </table>
+
+
+    <div class="pagination">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+
+      <button *ngFor="let page of [].constructor(totalPages); let i = index" (click)="goToPage(i + 1)"
+        [class.active]="currentPage === i + 1">
+        {{ i + 1 }}
+      </button>
+
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+
+      <label>Items per page:</label>
+      <select (change)="changeItemsPerPage($event)">
+        <option [selected]="itemsPerPage === 5">5</option>
+        <option [selected]="itemsPerPage === 10">10</option>
+        <option [selected]="itemsPerPage === 15">15</option>
+      </select>
+    </div>
+
+
+  </div>
+</div>
